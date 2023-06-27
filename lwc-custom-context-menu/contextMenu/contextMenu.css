@@ -1,0 +1,42 @@
+div {
+  display: block;
+}
+
+.contextmenu {
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  color: #373a3c;
+  margin: 2px 0 0;
+  min-width: 10em;
+  outline: none;
+  padding: 2px 0;
+  /* pointer-events: none; */
+  text-align: left;
+  transition: opacity 250ms ease !important;
+  z-index: 9999;
+  position: fixed; 
+  opacity: 1; 
+}
+
+.contextmenu-item {
+  background: 0 0;
+  border: 0;
+  color: #373a3c;
+  cursor: pointer;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 3px 20px;
+  text-align: inherit;
+  white-space: nowrap;
+}
+
+.contextmenu-item:active {
+  outline: none;
+}
+
+.contextmenu-item:hover {
+  background-color: rgb(78, 107, 235);
+  color: #fff;
+}

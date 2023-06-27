@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-button-group" role="group">
+        <template for:each={buttonList} for:item='item' for:index='index'>
+            {getIndex}
+            <template if:true={isActive}>
+                <button key={item.id} class="slds-button slds-button_brand" onclick={onClickHandler}
+                    name={item.value}>{item.value}
+                </button>
+            </template>
+            <template if:false={isActive}>
+                <button key={item.id} class="slds-button slds-button_neutral" onclick={onClickHandler}
+                    name={item.value}>{item.value}
+                </button>
+            </template>
+        </template>
+    </div>
+</template>
