@@ -1,0 +1,103 @@
+<template>
+    <div tabindex="-1" class="slds-datepicker slds-dropdown slds-dropdown_right date-picker-postion">
+        <div class="slds-datepicker__filter slds-grid">
+            <div class="slds-datepicker__filter_month slds-grid slds-grid_align-spread slds-grow">
+                <div class="slds-align-middle">
+                    <button class="slds-button slds-button_icon slds-button_icon-container" title="Previous Month"
+                        onclick={prev}>
+                        <label>
+                            <lightning-icon icon-name="utility:left" size="x-small"> </lightning-icon>
+                            <span class="slds-assistive-text">Previous Month</span>
+                        </label>
+                    </button>
+                </div>
+                <h2 class="slds-align-middle">{currentMonth}</h2>
+                <div class="slds-align-middle">
+                    <button class="slds-button slds-button_icon slds-button_icon-container" title="Next Month"
+                        onclick={next}>
+                        <label>
+                            <lightning-icon icon-name="utility:right" size="x-small"> </lightning-icon>
+                            <span class="slds-assistive-text">Next Month</span>
+                        </label>
+                    </button>
+                </div>
+            </div>
+            <div class="slds-shrink-none">
+                <div class="slds-select_container">
+                    <select class="slds-select" onchange={yearSelectChange}>
+                        <template for:each={selectYearList} for:item="item" for:index="index">
+                            <template if:true={item.selected}>
+                                <option key={item.value} value={item.value} selected>{item.value}</option>
+                            </template>
+                            <template if:false={item.selected}>
+                                <option key={item.value} value={item.value}>{item.value}</option>
+                            </template>
+                        </template>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <table class="slds-datepicker__month" role="grid">
+            <thead>
+                <tr>
+                    <th scope="col">
+                        <abbr title="Sunday">Sun</abbr>
+                    </th>
+                    <th scope="col">
+                        <abbr title="Monday">Mon</abbr>
+                    </th>
+                    <th scope="col">
+                        <abbr title="Tuesday">Tue</abbr>
+                    </th>
+                    <th scope="col">
+                        <abbr title="Wednesday">Wed</abbr>
+                    </th>
+                    <th scope="col">
+                        <abbr title="Thursday">Thu</abbr>
+                    </th>
+                    <th scope="col">
+                        <abbr title="Friday">Fri</abbr>
+                    </th>
+                    <th scope="col">
+                        <abbr title="Saturday">Sat</abbr>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template for:each={dayList} for:item="items" for:index="index">
+                    <tr key={items.id}>
+                        <template for:each={items.value} for:item="item" for:index="idx">
+                            <template lwc:if={item.adjacentMonth}>
+                                <td class="slds-day_adjacent-month" key={item.day}>
+                                    <span class="slds-day" data-value={item.value} onclick={dateSelectChange}>
+                                        {item.day} </span>
+                                </td>
+                            </template>
+                            <template lwc:elseif={item.selected}>
+                                <td class="slds-is-selected" key={item.day}>
+                                    <span class="slds-day" data-value={item.value} onclick={dateSelectChange}>
+                                        {item.day} </span>
+                                </td>
+                            </template>
+                            <template lwc:elseif={item.today}>
+                                <td class="slds-is-today" key={item.day}>
+                                    <span class="slds-day" data-value={item.value} onclick={dateSelectChange}>
+                                        {item.day} </span>
+                                </td>
+                            </template>
+                            <template lwc:else>
+                                <td key={item.day}>
+                                    <span class="slds-day" data-value={item.value} onclick={dateSelectChange}>
+                                        {item.day} </span>
+                                </td>
+                            </template>
+                        </template>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <button class="slds-button slds-align_absolute-center slds-text-link" onclick={todayClickHandler}>
+            <label>Today</label>
+        </button>
+    </div>
+</template>
