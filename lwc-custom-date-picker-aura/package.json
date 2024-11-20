@@ -20,7 +20,7 @@
     "@salesforce/eslint-config-lwc": "^0.7.0",
     "@salesforce/eslint-plugin-aura": "^1.4.0",
     "@salesforce/sfdx-lwc-jest": "^7.0.0",
-    "eslint": "^7.6.0",
+    "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.0.0",
     "husky": "^9.0.0",
     "lint-staged": "^15.0.0",
