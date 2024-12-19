@@ -1,0 +1,10 @@
+<template>
+  <template if:true={_showMenu}>
+    <div role="menu" tabindex="-1" class="contextmenu" style={position} oncontextmenu={contextMenuHadler}>
+      <template for:each={_menuItem} for:item="item">
+        <div key={item.id} data-id={item.id} data-name={item.name} data-value={item.value} onclick={clickHandler}
+          class="contextmenu-item" role="menuitem" tabindex="-1" aria-disabled="false"> {item.name}</div>
+      </template>
+    </div>
+  </template>
+</template>

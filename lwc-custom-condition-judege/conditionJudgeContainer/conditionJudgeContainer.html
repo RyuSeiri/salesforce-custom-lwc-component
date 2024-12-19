@@ -1,0 +1,58 @@
+<template>
+    <!-- 単一の判断 -->
+    単一の判断：
+    <div class="slds-card" style="width:500px">
+        <c-condition-judge condition="eq" left-param="1" right-param="1">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">等しい条件</div>
+            </div>
+        </c-condition-judge>
+        <c-condition-judge condition="gt" left-param="2" right-param="1">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">大きい条件</div>
+            </div>
+        </c-condition-judge>
+        <c-condition-judge condition="lt" left-param="1" right-param="2">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">小さい条件</div>
+            </div>
+
+        </c-condition-judge>
+        <c-condition-judge condition="gt" left-param="2" right-param="1">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">大きいまたは等しい条件</div>
+            </div>
+        </c-condition-judge>
+
+        <c-condition-judge condition="lt" left-param="1" right-param="2">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">小さいまたは等しい条件</div>
+            </div>
+        </c-condition-judge>
+
+        <c-condition-judge condition="contains" left-param="1,2,3,4" right-param="2">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">含む条件</div>
+            </div>
+        </c-condition-judge>
+
+        <c-condition-judge condition="contains" left-param="1,2,3,4" right-param="5">
+            <div class="slds-grid">
+                <div class="slds-col" style="background-color: aliceblue;">含まない条件</div>
+            </div>
+        </c-condition-judge>
+    </div>
+    <!-- 複雑の判断 -->
+    複雑の判断：
+    <div class="slds-card" style="width:500px">
+        <c-condition-judge condition="noteq" left-param="1" right-param={targetValue}>
+    
+            <c-condition-judge condition="lt" left-param="12" right-param={targetValue}>
+                12より小さい
+            </c-condition-judge>
+            <c-condition-judge condition="ge" left-param="12" right-param={targetValue}>
+                12より大きいまたは等しい
+            </c-condition-judge>
+        </c-condition-judge>
+    </div>
+</template>

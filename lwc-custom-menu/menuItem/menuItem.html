@@ -1,0 +1,17 @@
+<template>
+    <template for:each={_children} for:item="it" for:index="index">
+        <template if:false={it.items}>
+            <li class="slds-dropdown__item" role="presentation" key={item}>
+                <a href="#">
+                    <span class="slds-truncate" title={it.label}>{it.label}</span>
+                </a>
+            </li>
+        </template>
+        <template if:true={it.items}>
+            <li class="slds-dropdown__header slds-truncate" key={item}>
+                <span title={it.label}>{it.label}</span>
+            </li>
+            <c-menu-item child-items={it.items} key={item}></c-menu-item>
+        </template>
+    </template>
+</template>

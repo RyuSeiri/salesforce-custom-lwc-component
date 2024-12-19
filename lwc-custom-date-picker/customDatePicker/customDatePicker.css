@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  font-size: 16px;
+
+  --lwc-heightInput: 42px;
+  --lwc-borderWidthThin: 1px;
+  --sds-c-input-color-border: #c3ccd4;
+  --sds-c-input-radius-border: 4px;
+  --slds-c-input-spacing-horizontal-start: 8px;
+  --slds-c-input-spacing-horizontal-end: 8px;
+
+  /* disabled */
+  --lwc-colorBackgroundInputDisabled: #e4eaee;
+  --lwc-colorTextInputDisabled: #63676b;
+}
+
+.custom-input-label {
+  margin-bottom: 8px;
+  font-weight: 700;
+  line-height: 30px;
+  color: var(
+    --lwc-colorTextDefault
+  ); /* ラベル色を変えたい場合はこの変数に指定する */
+}
+
+.required-mark {
+  color: #d61b36;
+  vertical-align: middle;
+}

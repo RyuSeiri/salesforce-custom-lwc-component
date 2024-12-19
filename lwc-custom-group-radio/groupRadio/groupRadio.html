@@ -1,0 +1,19 @@
+<template>
+    <legend if:true={label} class="slds-form-element__legend slds-form-element__label">
+        {label}
+    </legend>
+    <div class="slds-form-element__control">
+        <template for:each={optionAndDatas} for:item="option">
+            <span key={option.id} class="slds-radio">
+                <input type="radio" id={option.id} name={name} value={option.value} checked={option.checked}
+                    onclick={clickHandeler} />
+                <label class="slds-radio__label" for={option.id}>
+                    <span class="slds-radio_faux"></span>
+                    <span class="slds-form-element__label">
+                        {option.label}
+                    </span>
+                </label>
+            </span>
+        </template>
+    </div>
+</template>

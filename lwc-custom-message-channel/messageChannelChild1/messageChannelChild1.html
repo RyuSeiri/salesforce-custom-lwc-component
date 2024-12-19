@@ -1,0 +1,11 @@
+<template>
+  <lightning-card title="MessageChannel">
+    <lightning-input name='fisrtName' onchange={setValue} value={fisrtName} label="fisrtName"></lightning-input>
+    <lightning-input name='lastName' onchange={setValue} value={lastName} label="lastName"></lightning-input>
+    <lightning-input name='age' onchange={setValue} value={age} label="age"></lightning-input>
+    <lightning-combobox name='sex' onchange={setValue} value={sex} options={options} label="sex"></lightning-combobox>
+    <br />
+    <lightning-button variant="sccuss" label="add" onclick={add}></lightning-button>
+
+  </lightning-card>
+</template>

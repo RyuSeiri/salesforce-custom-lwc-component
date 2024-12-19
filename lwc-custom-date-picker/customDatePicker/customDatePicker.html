@@ -1,0 +1,30 @@
+<template>
+    <div tabindex="-1"
+        class="slds-form-element__control slds-size_1-of-1 slds-dropdown-trigger slds-dropdown-trigger_click slds-is-open">
+        <div class="custom-input-label">
+            <template if:true={required}>
+                <span class="required-mark">*</span>
+            </template>
+            {label}
+        </div>
+        <div class="slds-form-element__control slds-size_1-of-1 slds-input-has-icon slds-input-has-icon_right">
+            <div class={inputClass}>
+                <input class="slds-input" onfocus={focusHandler} onclick={clickHandler} onchange={changeHandler}
+                    value={value}>
+                <div class="slds-button slds-button_icon slds-input__icon slds-input__icon_right" title="Select a date">
+                    <lightning-icon icon-name="utility:event" size="x-small"> </lightning-icon>
+                    <span class="slds-assistive-text">Select a date</span>
+                </div>
+            </div>
+            <template lwc:if={isHasError}>
+                <div class="slds-has-error">
+                    <div class="slds-form-element__help slds-show">{errorMessage}</div>
+                </div>
+            </template>
+            <template lwc:if={_open}>
+                <c-custom-calendar onselect={calendarSelectHandler} value={calendarVal} onmouseover={handleMouseOver}
+                    onmouseout={handleMouseOut}></c-custom-calendar>
+            </template>
+        </div>
+    </div>
+</template>

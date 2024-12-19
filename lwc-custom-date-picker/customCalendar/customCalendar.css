@@ -1,0 +1,12 @@
+.date-picker-postion {
+  top: 42px;
+  float: right;
+}
+
+.day {
+  cursor: pointer;
+}
+
+button > label {
+  cursor: pointer;
+}
